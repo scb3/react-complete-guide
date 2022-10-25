@@ -27,9 +27,11 @@ const NewExpense = (props) => {
 
   return (
     <div className="new-expense">
+      {/* Conditional List - If no expenses, just show "Add New Expense Button" */}
       {!isEditing && (
         <button onClick={startEditingHandler}>Add New Expense</button>
       )}
+      {/* Or if there are Expenses, show list and the Add Button, also added in a Cancel button to disable the adding of a new expense */}
       {isEditing && (
         <ExpenseForm
           onSaveExpenseData={saveExpenseDataHandler}
